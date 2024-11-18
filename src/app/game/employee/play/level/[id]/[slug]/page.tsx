@@ -68,7 +68,7 @@ const QuestionPage: React.FC = () => {
               border: "2px solid #ff00ff",
               boxShadow: "0 0 15px #ff00ff, 0 0 25px #ff00ff",
             }}
-            onClick={() => console.log(`Selected answer: ${answer}`)} // Handle answer selection
+            onClick={goToNextQuestion}
           >
             {answer}
           </button>

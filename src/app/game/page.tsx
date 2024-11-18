@@ -64,9 +64,9 @@ const Card: React.FC<CardProps> = ({ image, title, description }) => {
         <h2 className="text-xl  font-semibold mb-2">{title}</h2>
       </div>
       <div className="px-6 py-2">
-        <button className="bg-blue-400 font-bold text-black px-4 py-2 rounded-full hover:bg-blue-700">
+        <a href='/game/employee/play'  className="bg-blue-400 font-bold text-black px-4 py-2 rounded-full hover:bg-blue-700">
           Сонгох
-        </button>
+        </a>
       </div>
     </div>
   );

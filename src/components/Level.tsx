@@ -1,5 +1,4 @@
-"use client";
-
+'use client'
 import React, { useState } from "react";
 
 type Level = {
@@ -21,7 +20,10 @@ const GameLevels: React.FC = () => {
     { id: 8, x: "5%", y: "50%", locked: true },
   ];
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const toggleModal = () => {setIsModalOpen(!isModalOpen)};
+ 
   return (
     <div
       className="relative w-full h-screen p-4 bg-cover bg-center"
@@ -34,7 +36,45 @@ const GameLevels: React.FC = () => {
         >
           Буцах
         </a>
+        <button
+        onClick={toggleModal}
+        className="absolute top-4 right-4 p-2 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600"
+      >
+        Тайлбар
+      </button>
       </header>
+     
+
+      {/* Modal for "Use client" */}
+      {isModalOpen && (
+       <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+       <div className="bg-white rounded-2xl shadow-lg p-8 w-4/5 max-w-sm relative">
+         {/* Close Button */}
+         <button
+           onClick={toggleModal}
+           className="absolute top-4 right-4 text-gray-400 hover:text-red-500 font-bold text-2xl"
+         >
+           &times;
+         </button>
+      
+         {/* Popup Content */}
+         <h2 className="text-2xl font-bold text-blue-600 mb-4">Дүрийн онцлог</h2>
+         <p className="text-gray-600 mb-6 text-center">
+         Энэ дүр нь
+         </p>
+      
+         {/* Action Buttons */}
+         <div className="flex justify-center gap-4">
+           <button
+             onClick={toggleModal}
+             className="px-6 py-2 border-2 border-blue-500 text-blue-500 rounded-full font-bold hover:bg-blue-50"
+           >
+             Болсон
+           </button>
+         </div>
+  </div>
+  </div>)}
+
       {/* SVG for lines */}
       <svg
         className="absolute w-full h-full"
@@ -74,7 +114,6 @@ const GameLevels: React.FC = () => {
             style={{ position: "absolute", top: level.y, left: level.x }}
             className={`flex items-center justify-center p-4 rounded-full w-16 h-16 cursor-pointer
               ${level.locked ? "bg-gray-400" : "bg-blue-500"} text-white shadow-md`}
-           
           >
             {level.locked ? (
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
