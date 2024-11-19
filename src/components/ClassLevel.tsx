@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import image from '../../public/Image (5).jpg'
+import image from '../../public/school.jpg'
 import Image from "next/image";
 type Level = {
   id: number;
