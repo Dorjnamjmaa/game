@@ -13,50 +13,60 @@ interface CardProps {
   image: string; // Use `string` instead of `String`
   title: string;
   description: string;
+  href: string;
 }
 const cardData = [
   {
-    image: image1, // Ensure the image path is correct
-    title: 'Ажилтан',
-    description: 'This is the description for the first card.'
-  },
-  {
     image: image2, // You can replace this with different image paths
     title: 'Ажил олгогч',
-    description: 'This is the description for the second card.'
+    description: 'This is the description for the second card.',
+    href: '/game/employee/play',
   },
+
   {
     image: image3, // And here as well
-    title: 'Сурагч охин',
-    description: 'This is the description for the third card.'
+    title: 'Сурагч',
+    description: 'This is the description for the third card.',
+    href: '/game/class/play',
+  },
+  {
+    image: image1, // Ensure the image path is correct
+    title: 'Ажилтан',
+    description: 'This is the description for the first card.',
+    href: '/game/employee/play',
   },
   {
     image: image4, // And here as well
-    title: 'Оюутан охин',
-    description: 'This is the description for the third card.'
+    title: 'Оюутан',
+    description: 'This is the description for the third card.',
+    href: '/game/employee/play',
   },
   {
     image: image5, // And here as well
     title: 'Эмээ',
-    description: 'This is the description for the third card.'
+    description: 'This is the description for the third card.',
+    href: '/game/employee/play',
   },
   {
     image: image6, // And here as well
-    title: 'Сурагч хүү',
-    description: 'This is the description for the third card.'
+    title: 'Ахлах ангийн сурагч',
+    description: 'This is the description for the third card.',
+    href: '/game/employee/play',
   },
   {
     image: image7, // And here as well
     title: 'Эмэгтэй',
-    description: 'This is the description for the third card.'
+    description: 'This is the description for the third card.',
+    href: '/game/employee/play',
   },
   {
     image: image8, // And here as well
     title: 'Эрэгтэй',
-    description: 'This is the description for the third card.'
+    description: 'This is the description for the third card.',
+    href: '/game/employee/play',
   },
 ];
-const Card: React.FC<CardProps> = ({ image, title, description }) => {
+const Card: React.FC<CardProps> = ({ image, title, description, href }) => {
   return (
     <div className="rounded bg-gradient-to-b from-blue-300 to-purple-300 overflow-hidden shadow-lg">
       <img  src={image} alt={title} />
@@ -64,7 +74,7 @@ const Card: React.FC<CardProps> = ({ image, title, description }) => {
         <h2 className="text-xl  font-semibold mb-2">{title}</h2>
       </div>
       <div className="px-6 py-2">
-        <a href='/game/employee/play'  className="bg-blue-400 font-bold text-black px-4 py-2 rounded-full hover:bg-blue-700">
+        <a href={href}  className="bg-blue-400 font-bold text-black px-4 py-2 rounded-full hover:bg-blue-700">
           Сонгох
         </a>
       </div>
@@ -85,6 +95,7 @@ export default function page() {
           image={card.image.src}
           title={card.title}
           description={card.description}
+          href={card.href}
         />
       ))}
     </div>

@@ -11,15 +11,27 @@ type Question = {
 
 const questionSets: Record<string, Question[]> = {
   1: [
-    { id: 1, question: "What is the capital of Mongolia?", answers: ["Ulaanbaatar", "Tokyo", "Beijing", "Seoul"] },
-    { id: 2, question: "What is the tallest mountain in the world?", answers: ["Mount Everest", "K2", "Kangchenjunga", "Makalu"] },
-    { id: 3, question: "What is the chemical symbol for water?", answers: ["H2O", "CO2", "NaCl", "O2"] },
+    { id: 1, question: "Та энэхүү хоёр хүний ур чадвар, туршлагыг хэрхэн харьцуулж үнэлсэн бэ?", answers: ["Эмэгтэй, эрэгтэй хүн гэдгээр нь", "Мэргэжлийн ур чадвараар нь", "Илүү шалтгаан байхгүй"] },
+    { id: 2, question: "Тэдний хувь хүний онцлог, багаар ажиллах чадвар нь сонголтод хэрхэн нөлөөлсөн бэ?", answers: ["Энхтүшиг инженер болоход тохирохгүй гэж бодсон", "Ажлын туршлагыг харсан", "Бусадтайгаа нийцтэй байх хэрэгтэй гэж харсан"] },
+    { id: 3, question: "Инженер мэргэжилд эрэгтэй хүн илүү тохиромжтой гэж бодогдсон уу?", answers: ["Тийм", "Үгүй"] },
   ],
   2: [
-    { id: 1, question: "What is the currency of Japan?", answers: ["Yen", "Won", "Dollar", "Euro"] },
-    { id: 2, question: "Who discovered gravity?", answers: ["Isaac Newton", "Albert Einstein", "Galileo", "Nikola Tesla"] },
-    { id: 3, question: "What is the capital of France?", answers: ["Paris", "Rome", "Berlin", "Madrid"] },
-  ],
+    { 
+      "id": 1, 
+      "question": "Та сонголтоо хийхдээ хэн нэгний хувийн амьдралын нөхцөл байдлыг харгалзсан уу?", 
+      "answers": ["Тийм", "Үгүй", "Бараг үгүй"] 
+    },
+    { 
+      "id": 2, 
+      "question": "Та сонгосон хүний ажилд орох хүслийн хүчийг хэрхэн үнэлсэн бэ?", 
+      "answers": ["Ажлын хүсэл эрмэлзлийг нь харгалзсан", "Өмнөх ажлын амжилтыг нь харсан", "Хувийн онцлог дээр үндэслэсэн"] 
+    },
+    { 
+      "id": 3, 
+      "question": "Эмэгтэй инженерүүдтэй ажиллахад хүндрэлтэй гэж боддог уу?", 
+      "answers": ["Тийм", "Үгүй", "Хамаарахгүй"] 
+    }
+  ]
   // Add more levels as needed
 };
 
@@ -52,7 +64,7 @@ const QuestionPage: React.FC = () => {
       style={{ backgroundImage: "url('/neon-background.jpg')" }}
     >
       <h1
-        className="text-white text-4xl font-bold mb-8"
+        className="text-white px-64 text-4xl font-bold mb-8"
         style={{
           textShadow: "0 0 20px #00ffff, 0 0 30px #00ffff",
         }}
@@ -82,7 +94,7 @@ const QuestionPage: React.FC = () => {
         }}
         onClick={goToNextQuestion}
       >
-        Next Question
+        Дараагийн асуулт
       </button>
     </div>
   );

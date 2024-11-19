@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
-
+import image from '../../public/Image (7).jpg'
+import Image from "next/image";
 type Level = {
   id: number;
   x: string;
@@ -58,13 +59,19 @@ const GameLevels: React.FC = () => {
          </button>
       
          {/* Popup Content */}
-         <h2 className="text-2xl font-bold text-blue-600 mb-4">Дүрийн онцлог</h2>
-         <p className="text-gray-600 mb-6 text-center">
-         Энэ дүр нь
+         <h2 className="text-2xl font-bold text-blue-600 mb-4">Кейс 1</h2>
+         <p className="text-gray-600 mb-6">
+          Ажилд авах шалгаруулалт: Компанийн хүний нөөцийн албаны мэргэжилтэн Энхмаа шинэ инженер ажилд
+авах үүрэгтэй. Хоёр нэр дэвшигч байв:
          </p>
-      
+      <p className="text-gray-600 mb-6">
+Энхтүвшин: Эрэгтэй, 5 жилийн туршлагатай.
+</p>
+<p className="text-gray-600 mb-6">Номин: Эмэгтэй, 6 жилийн туршлагатай, олон улсын шагнал хүртсэн.</p>
+<Image src={image} width={600} height={600} alt={""}/>
          {/* Action Buttons */}
-         <div className="flex justify-center gap-4">
+         <div className="flex pt-2 justify-center gap-4">
+         
            <button
              onClick={toggleModal}
              className="px-6 py-2 border-2 border-blue-500 text-blue-500 rounded-full font-bold hover:bg-blue-50"
